@@ -187,6 +187,7 @@
     "1638789870c570af78": {
       "type": "masonry",
       "settings": {
+        "masonry-grid": "shopify:\/\/shop_images\/model-poses-with-neon-reflection.jpg"
       }
     }
   },
