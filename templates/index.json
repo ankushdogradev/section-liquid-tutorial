@@ -186,6 +186,52 @@
     },
     "1638789870c570af78": {
       "type": "masonry",
+      "blocks": {
+        "d20c7f80-3a55-4ea5-931d-abf8ed63896e": {
+          "type": "masonry-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/holding-hands.jpg"
+          }
+        },
+        "113b60a2-abe6-42a0-bb85-3abeafe6e228": {
+          "type": "masonry-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mens-anchor-bracelet.jpg"
+          }
+        },
+        "bb70adbf-8e47-491f-b7af-ac0d526b94c0": {
+          "type": "masonry-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bohemian-woman-long-hair.jpg"
+          }
+        },
+        "646e79dc-b182-450d-ba8d-6928f6215a13": {
+          "type": "masonry-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stacked-bracelets.jpg"
+          }
+        },
+        "aff4bf29-142f-4be5-a136-010ebda9c707": {
+          "type": "masonry-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/model-poses-casually-on-ride.jpg"
+          }
+        },
+        "02d061d2-6748-4034-ac44-bfb83d314a27": {
+          "type": "masonry-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/model-poses-with-neon-reflection.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "d20c7f80-3a55-4ea5-931d-abf8ed63896e",
+        "113b60a2-abe6-42a0-bb85-3abeafe6e228",
+        "bb70adbf-8e47-491f-b7af-ac0d526b94c0",
+        "646e79dc-b182-450d-ba8d-6928f6215a13",
+        "aff4bf29-142f-4be5-a136-010ebda9c707",
+        "02d061d2-6748-4034-ac44-bfb83d314a27"
+      ],
       "settings": {
         "masonry-grid": "shopify:\/\/shop_images\/model-poses-with-neon-reflection.jpg"
       }
