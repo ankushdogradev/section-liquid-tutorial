@@ -14,6 +14,16 @@
     </div>
 {%- endfor -%}
 
+{% javascript %}
+
+var grid = document.querySelector('.masonry-grid');
+var msnry = new Masonry(grid, {
+    itemSelector: '.grid-item',
+    columnWidth: 600
+});
+
+{% endjavascript %}
+
 {% schema %}
 {
     "name": "Masonry Grid",
