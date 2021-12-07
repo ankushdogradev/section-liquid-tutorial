@@ -18,7 +18,7 @@
                 {% unless product.available %}<br><strong>sold out</strong>
                 {% endunless %}
                 <a href="{{ product.url | within: collection }}">
-                    <img src="{{ product.featured_image.src | img_url: '480 X 480' }}" alt="{{ product.featured_image.alt | escape }}" width="480" height="480" loading="lazy">
+                    <img src="{{ product.featured_image.src | img_url: '480X480' }}" alt="{{ product.featured_image.alt | escape }}" width="480" height="480" loading="lazy">
                 </a>
             </div>
         {% endfor %}
