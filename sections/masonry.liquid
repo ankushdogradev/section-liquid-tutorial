@@ -14,17 +14,8 @@
     </div>
 {%- endfor -%}
 
-{% javascript %}
-
-var grid = document.querySelector('.masonry-grid');
-var msnry = new Masonry(grid, {
-    itemSelector: '.grid-item',
-    columnWidth: 600
-});
-
-{% endjavascript %}
-
 {% schema %}
+
 {
     "name": "Masonry Grid",
     "settings": [
@@ -34,35 +25,41 @@ var msnry = new Masonry(grid, {
             "label": "Add a masonry grid"
         }
     ],
-    "blocks":[
-    {
-        "name": "Masonry Image",
-        "type": "masonry-image",
-        "settings": [
-            {
-                "type": "image_picker",
-                "id": "image",
-                "label": "Image"
-            },
-            {
-                "type": "text",
-                "id": "text",
-                "label": "Text"
-            },
-            {
-                "type": "url",
-                "id": "url",
-                "label": "URL"
-            }
-        ]
-    }
+    "blocks": [
+        {
+            "name": "Masonry Image",
+            "type": "masonry-image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }, {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                }, {
+                    "type": "url",
+                    "id": "url",
+                    "label": "URL"
+                }
+            ]
+        }
     ],
     "presets": [
-    {
-        "name": "Masonry Grid",
-        "category": "Masonry"
-    }
-    
+        {
+            "name": "Masonry Grid",
+            "category": "Masonry"
+        }
     ]
 }
+
 {% endschema %}
+
+{% javascript %}
+let grid = document.querySelector('.masonry-grid');
+let msnry = new Masonry( grid, {
+  itemSelector: '.grid-item',
+  columnWidth: 600
+});
+{% endjavascript %}
