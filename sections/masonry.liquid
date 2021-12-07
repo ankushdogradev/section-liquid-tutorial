@@ -1,11 +1,12 @@
 <!-- Masonry Grid Title -->
 <h2>{{ section.settings.masonry-grid }}</h2>
 
-
 <!-- Block Object -> Masonry Grid -->
-    <!-- Image -->
-    <!-- Text -->
-    <!-- URL -->
+{%- for bloks in section.blocks -%}
+    {{ block.settings.image }}
+    {{ block.settings.text }}
+    {{ block.settings.url }}
+{%- endfor -%}
 
 <div class="grid" data-masonry="{ 'itemSelector': '.grid-item', 'columnWidth': 200 }">
     <div class="grid-item"></div>
