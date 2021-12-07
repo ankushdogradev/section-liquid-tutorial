@@ -75,6 +75,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 {{settings.type_body_font | font_face: font_display: 'swap'}}{{body_font_bold | font_face: font_display: 'swap'}}{{body_font_italic | font_face: font_display: 'swap'}}{{body_font_bold_italic | font_face: font_display: 'swap'}}{{settings.type_header_font | font_face: font_display: 'swap'}}:root {
     --font-body-family: {{settings.type_body_font.family}}, {{settings.type_body_font.fallback_families}};
     --font-body-style: {{settings.type_body_font.style}};
@@ -169,6 +179,16 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
 {% endstyle %}
 
         {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -228,10 +248,9 @@ body {
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
       }
     </script>
-
         {%- if settings.predictive_search_enabled -%}
             <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
         {%- endif -%}
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     </body>
 </html>
