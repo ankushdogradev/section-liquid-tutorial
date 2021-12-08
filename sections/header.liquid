@@ -1,3 +1,47 @@
 <!-- STORE NAME / LOGO -->
+{{ shop.name }}
 <!-- NVIGATION MENU -->
+<ul>
+    {% for link in linklists.main-menu.links %}
+        <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% if link.links != blank %}
+                <ul>
+                    {% for child_link in link.links %}
+                        <li>
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+
 <!-- CART BUTTON / ACCOUNT LINKS IF ENABELD -->
+<!-- {% schema %}
+
+{}
+
+{% endschema %} -->
+
+
+<!-- 
+{% assign menu = linklists.main-menu %}
+
+{{ menu.title }}:
+{{ menu.levels }}
+{% for link in menu.links %}
+    {{ link.title }}:
+    {{ link.levels }}
+    {% for sub_link in link.links %}
+        {{ sub_link.title }}:
+        {{ sub_link.levels }}
+        {% for sub_sub_link in sub_link.links %}
+            {{ sub_sub_link.title }}:
+            {{ sub_sub_link.levels }}
+        {% endfor %}
+    {% endfor %}
+{% endfor %} 
+-->
