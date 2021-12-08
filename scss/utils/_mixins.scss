@@ -1,0 +1,47 @@
+//**************************
+//  MEDIA QUERIES MIXIN
+//**************************
+
+// 540px, 1024px, 1440px
+$breakpoints-up: ("medium": "33.75em",
+    "large": "64em",
+    "xlarge": "90em",
+);
+
+// 539px, 1023px, 1399px
+$breakpoints-down: ("small": "33.6875em",
+    "medium": "63.9375em",
+    "large": "89.9375em",
+);
+
+/**
+ * breakpoint-up/down - Change color of a css property based on the currently active theme
+ *
+ * @param  {size}     min/max size of the screen
+ *
+ * @example:-
+ *
+ * HIDE FOR DESKTOP:
+ @include breakpoint-down(small) {
+    background: red;
+ }
+ * HIDE FOR MOBILE:
+ @include breakpoint-up(medium) {
+    background: blue;
+ }
+ *
+ * if you are designing your layout with a mobile-first approach, then use min-width breakpoints and work your way up.
+ * if you are designing for larger devices first, then set your default CSS as you normally would and adjust for smaller devices with the max-width approach.
+*/
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}

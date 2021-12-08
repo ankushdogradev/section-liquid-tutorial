@@ -1,0 +1,18 @@
+.nav-cont {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+
+    &__links {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+    }
+}

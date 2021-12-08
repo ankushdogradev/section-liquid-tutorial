@@ -1,56 +1,47 @@
-<!-- STORE NAME / LOGO -->
-{{ shop.name }}
+{{ 'header.css' | asset_url | stylesheet_tag }}
 
-<!-- NVIGATION MENU -->
-<ul>
-    {% for link in linklists.main-menu.links %}
-        <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>
-            {% if link.links != blank %}
-                <ul>
-                    {% for child_link in link.links %}
-                        <li>
-                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>
-
-<!-- CART BUTTON / ACCOUNT LINKS IF ENABELD -->
-<div class="">
-    <button>
-        {% render 'icon-search' %}
-    </button>
-    <a href="{{ routes.cart_url }}">
-        {% render 'icon-shopping-bag' %}
-    </a>
+<!-- Delete the code if you want -->
+<div class="nav-cont">
+    <div class="nav-cont__logo">
+        <!-- STORE NAME / LOGO -->
+        {{ shop.name }}
+    </div>
+    <div class="nav-cont__links">
+        <!-- NVIGATION MENU -->
+        <ul>
+            {% for link in linklists.main-menu.links %}
+                <li {% if link.active %} class="active {% if link.child_active %}child-active{% endif %}" {% endif %}>
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links != blank %}
+                        <ul>
+                            {% for child_link in link.links %}
+                                <li {% if child_link.active %}class="active {% if child_link.child_active %}child-active{% endif %}"{% endif %}><a href= "{{ child_link.url }}>
+                                    <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="nav-cont__btn">
+        <!-- CART BUTTON / ACCOUNT LINKS IF ENABELD -->
+        <button>
+            {% render 'icon-search' %}
+        </button>
+        <a href="{{ routes.cart_url }}">
+            {% render 'icon-shopping-bag' %}
+        </a>
+    </div>
 </div>
 
-<!-- {% schema %}
+<!-- ******************************************* -->
 
-{}
-
-{% endschema %} -->
-
-
+<!-- STEPS -->
 <!-- 
-{% assign menu = linklists.main-menu %}
-
-{{ menu.title }}:
-{{ menu.levels }}
-{% for link in menu.links %}
-    {{ link.title }}:
-    {{ link.levels }}
-    {% for sub_link in link.links %}
-        {{ sub_link.title }}:
-        {{ sub_link.levels }}
-        {% for sub_sub_link in sub_link.links %}
-            {{ sub_sub_link.title }}:
-            {{ sub_sub_link.levels }}
-        {% endfor %}
-    {% endfor %}
-{% endfor %} 
+    1. Create a schema.
+    2. Do as much cutomusation from shopify dashboard.
+    3. Create Mobile Design First (Take inspiration from redbubble)
 -->
+<!-- ******************************************* -->
