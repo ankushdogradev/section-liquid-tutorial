@@ -2,16 +2,52 @@
 <script src="{{ 'header.js' | asset_url }}" defer></script>
 
 <div class="header">
-    <div class="overlay"></div>
+    <div class="overlay" id="overlay">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Catalog</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <a class="collection" href="#" id="collection">Collection</a>
+                <ul class="collection--ul" id="collection--ul">
+                    <li>
+                        <a href="#">Special Occasion</a>
+                    </li>
+                    <li>
+                        <a href="#">Casual</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Login</a>
+            </li>
+            <li>
+                <a href="#">Search</a>
+            </li>
+        </ul>
+    </div>
     <nav class="container">
         <!-- Logo -->
         <a class="header__logo" href="#">LOGO</a>
 
-        <!-- Ham-Menu -->
-        <div class="header__ham" id="anim">
-            <div class="header__ham__line--1"></div>
-            <div class="header__ham__line--2"></div>
-            <div class="header__ham__line--3"></div>
+        <div class="header__icons">
+            <!-- Cart Icon -->
+            <a class="header__cart" href="/cart">
+                {% render 'icon-shopping-bag' %}
+            </a>
+
+            <!-- Ham-Menu -->
+            <div class="header__ham" id="anim">
+                <div class="header__ham__line--1"></div>
+                <div class="header__ham__line--2"></div>
+                <div class="header__ham__line--3"></div>
+            </div>
         </div>
     </nav>
 </div>

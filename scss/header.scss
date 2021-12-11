@@ -1,11 +1,89 @@
 @use 'utils/mixins'as *;
 
 .header {
-    .container {
+    margin: 0.5rem;
+
+
+
+    .overlay {
+        // position: fixed;
+        // top: 0;
+        // bottom: 0;
+        // left: 0;
+        // right: 0;
+        position: absolute;
+        width: 100%;
+        left: 100%;
+        transform: translateX(0%);
+
+        background: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow-y: auto;
+        // transform: scale(0);
+        transition: 0.5s;
+
+        &.act {
+            // transform: scale(1);
+            transform: translateX(-100%);
+        }
+
+        ul {
+            position: relative;
+
+            li {
+                position: relative;
+                list-style: none;
+                text-align: center;
+                display: block;
+                height: auto;
+
+
+                a {
+                    position: relative;
+                    text-decoration: none;
+                    font-size: 1.5em;
+                    padding: 0 1rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+
+            .collection {
+                height: auto;
+
+                &--ul {
+                    transform: scale(0);
+                    transition: 0.5s;
+
+                    &.col--act {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
+    }
+
+    &__icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__cart {
+        height: 1rem;
+        width: 2.5rem;
+        margin-bottom: 1.5rem;
+        margin-right: 0.5rem;
+        color: black;
     }
 
     &__ham {
@@ -13,6 +91,7 @@
         flex-direction: column;
         gap: 0.4rem;
         cursor: pointer;
+        margin-right: 1rem;
 
         &__line--1,
         &__line--2,
