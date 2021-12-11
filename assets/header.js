@@ -9,6 +9,9 @@ anim.addEventListener("click", () => {
 });
 
 coll.addEventListener("click", () => {
-    collUl.classList.toggle("col--act");
-    console.log("HEllo")
-});
+    if (collUl.style.display === "block") {
+        collUl.style.display = "none";
+    } else if (collUl.style.display = "none") {
+        collUl.style.display = "block";
+    }
+})
