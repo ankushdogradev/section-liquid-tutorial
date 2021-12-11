@@ -73,10 +73,42 @@
     &__links {
         ul {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
             list-style: none;
+
+            li {
+                margin: 0.3rem;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-weight: 700;
+                }
+
+                .collection {
+                    &--ul {
+                        display: none;
+
+                        li {
+                            text-align: center;
+
+                            a {
+                                color: greenyellow;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
+
+        @include breakpoint-down(medium) {
+            display: none;
+        }
+
     }
+
 
     &__icons {
         display: flex;
