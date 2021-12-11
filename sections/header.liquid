@@ -34,7 +34,7 @@
     </div>
     <nav class="container">
         <!-- Logo -->
-        <a class="header__logo" href="#">LOGO</a>
+        <a class="header__logo" href="#"><img src="{{ section.settings.image | image_url: width: 150 }}" alt="{{ section.settings.image }}"></a>
         <div class="header__links">
             <ul>
                 <li>
@@ -81,3 +81,16 @@
         </div>
     </nav>
 </div>
+
+{% schema %}
+{
+    "name": "Header",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ]
+}
+{% endschema %}
