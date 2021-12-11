@@ -3,13 +3,10 @@
 .header {
     margin: 0.5rem;
 
-    @include breakpoint-down(medium) {
-        .overlay {
-            // position: fixed;
-            // top: 0;
-            // bottom: 0;
-            // left: 0;
-            // right: 0;
+    .overlay {
+        display: none;
+
+        @include breakpoint-down(medium) {
             position: absolute;
             width: 100%;
             left: 100%;
@@ -20,11 +17,9 @@
             justify-content: center;
             align-items: center;
             overflow-y: auto;
-            // transform: scale(0);
             transition: 0.5s;
 
             &.act {
-                // transform: scale(1);
                 transform: translateX(-100%);
             }
 
@@ -67,11 +62,20 @@
         }
     }
 
+
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+    }
+
+    .__links {
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
     }
 
     &__icons {
