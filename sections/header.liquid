@@ -1,47 +1,18 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
+{{ 'header.js' | asset_url | script_tag }}
 
-<!-- Delete the code if you want -->
-<div class="nav-cont">
-    <div class="nav-cont__logo">
-        <!-- STORE NAME / LOGO -->
-        {{ shop.name }}
-    </div>
-    <div class="nav-cont__links">
-        <!-- NVIGATION MENU -->
-        <ul>
-            {% for link in linklists.main-menu.links %}
-                <li {% if link.active %} class="active {% if link.child_active %}child-active{% endif %}" {% endif %}>
-                    <a href="{{ link.url }}">{{ link.title }}</a>
-                    {% if link.links != blank %}
-                        <ul>
-                            {% for child_link in link.links %}
-                                <li {% if child_link.active %}class="active {% if child_link.child_active %}child-active{% endif %}"{% endif %}><a href= "{{ child_link.url }}>
-                                    <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="nav-cont__btn">
-        <!-- CART BUTTON / ACCOUNT LINKS IF ENABELD -->
-        <button>
-            {% render 'icon-search' %}
-        </button>
-        <a href="{{ routes.cart_url }}">
-            {% render 'icon-shopping-bag' %}
-        </a>
-    </div>
+
+<div class="header">
+    <div class="overlay"></div>
+    <nav class="container">
+        <!-- Logo -->
+        <a class="header__logo" href="#">LOGO</a>
+
+        <!-- Ham-Menu -->
+        <div class="header__ham" id="anim">
+            <div class="header__ham__line--1"></div>
+            <div class="header__ham__line--2"></div>
+            <div class="header__ham__line--3"></div>
+        </div>
+    </nav>
 </div>
-
-<!-- ******************************************* -->
-
-<!-- STEPS -->
-<!-- 
-    1. Create a schema.
-    2. Do as much cutomusation from shopify dashboard.
-    3. Create Mobile Design First (Take inspiration from redbubble)
--->
-<!-- ******************************************* -->
