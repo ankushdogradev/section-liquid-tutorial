@@ -66,15 +66,19 @@
     .container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
+    }
+
+    &__logo {
+        margin-top: 1rem;
     }
 
     &__links {
         ul {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             list-style: none;
 
             li {
@@ -84,9 +88,14 @@
                     text-decoration: none;
                     color: black;
                     font-weight: 700;
+                    cursor: pointer;
                 }
 
                 .collection {
+                    display: flex;
+                    justify-content: center;
+
+
                     &--ul {
                         display: none;
 
@@ -119,6 +128,7 @@
     &__cart {
         height: 1rem;
         width: 2.5rem;
+        margin-top: 1rem;
         margin-bottom: 1.5rem;
         margin-right: 0.5rem;
         color: black;
