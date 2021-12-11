@@ -12,13 +12,27 @@
         <!-- Header hook for plugins -->
         {{ 'application.css' | asset_url | stylesheet_tag }}
         <script src="{{ 'application.js' | asset_url }}" defer></script>
+    
+        {% style %}
+        body.preload *{
+            animation-duration: 0s !important;
+            -webkit-animation-duration: 0s !important;
+            transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
+        {% endstyle %}
+    
     </head>
-    <body>
+    <body class="preload">
         {% section 'header' %}
         <main role="main">
             {{ content_for_layout }}
         </main>
 
         {% render 'custom-fonts' %}
+        
+        <script>
+            setTimeout(function(){
+                document.body.className="";
+            },500);
+        </script>
     </body>
 </html>
